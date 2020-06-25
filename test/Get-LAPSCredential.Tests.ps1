@@ -1,8 +1,8 @@
+$ModuleManifestName = 'Get-LAPSCredential.psd1'
 $Here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $Modules = Get-ChildItem "$here\.." -Filter '*.psm1' -Recurse
 $Rules = Get-ScriptAnalyzerRule
-$ModuleManifestName = 'Get-LAPSCredential.psd1'
-$ModuleManifestPath = "$PSScriptRoot\..\$ModuleManifestName"
+$ModuleManifestPath = Resolve-Path "$Here\..\Get-LAPSCredential\$ModuleManifestName"
 
 Import-Module $ModuleManifestPath
 
