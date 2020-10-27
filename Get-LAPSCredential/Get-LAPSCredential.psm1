@@ -15,8 +15,9 @@ function Get-LAPSCredential {
 
     process {
         foreach ($Computer in $Computername) {
-            if (Get-AdmPwdPassword -Computername $Computer | Select-Object -ExpandProperty Password) {
-                $Password = Get-AdmPwdPassword -Computername $Computer | Select-Object -ExpandProperty Password | ConvertTo-SecureString -AsPlainText -Force -ErrorAction Stop
+            $AdmPwdPassword = Get-AdmPwdPassword -Computername $Computer | Select-Object -ExpandProperty Password
+            if ($AdmPwdPassword) {
+                $Password = $AdmPwdPassword | ConvertTo-SecureString -AsPlainText -Force -ErrorAction Stop
             } else {
                 Write-Error "Couldn't get Passwort for '$Computer'!" -ErrorAction Stop
             }
@@ -38,7 +39,7 @@ function Get-LAPSCredential {
     Password: retrieved from LAPS
 
     .PARAMETER Computername
-    One or more computernames for which to create credentials
+    One or more computername(s) for which to create credentials
 
     .EXAMPLE
     Get-LAPSCredential -Computername "DESKTOP-HYKJASF"
