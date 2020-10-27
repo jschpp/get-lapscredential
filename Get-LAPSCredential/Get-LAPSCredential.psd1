@@ -1,7 +1,7 @@
-#
+﻿#
 # Modulmanifest für das Modul "Get-LAPSCredential"
 #
-# Generiert von: schoeppj
+# Generiert von: Johannes Schöpp
 #
 # Generiert am: 25.06.2020
 #
@@ -21,16 +21,20 @@ ModuleVersion = '1.0.0'
 GUID = 'ca124619-8579-4c19-9623-3b47a85798c4'
 
 # Autor dieses Moduls
-Author = 'schoeppj'
+Author = 'Johannes Schöpp'
 
 # Unternehmen oder Hersteller dieses Moduls
-CompanyName = 'Unbekannt'
+CompanyName = ''
 
 # Urheberrechtserklärung für dieses Modul
-Copyright = '(c) 2020 schoeppj. Alle Rechte vorbehalten.'
+Copyright = '(c) 2020 Johannes Schöpp. Alle Rechte vorbehalten.'
 
 # Beschreibung der von diesem Modul bereitgestellten Funktionen
-# Description = ''
+Description = @"
+Wrapper around Get-AdmPwdPassword.
+
+Creates a pscredential which can be used in a PSSession.
+"@
 
 # Die für dieses Modul mindestens erforderliche Version des Windows PowerShell-Moduls
 # PowerShellVersion = ''
@@ -95,19 +99,19 @@ PrivateData = @{
     PSData = @{
 
         # 'Tags' wurde auf das Modul angewendet und unterstützt die Modulermittlung in Onlinekatalogen.
-        # Tags = @()
+        Tags = @("LAPS", "Password", "Credential", "Wrapper", "AdmPwd")
 
         # Eine URL zur Lizenz für dieses Modul.
-        # LicenseUri = ''
+        LicenseUri = 'https://github.com/jschpp/get-lapscredential/blob/main/LICENSE'
 
         # Eine URL zur Hauptwebsite für dieses Projekt.
-        # ProjectUri = ''
+        ProjectUri = 'https://github.com/jschpp/get-lapscredential'
 
         # Eine URL zu einem Symbol, das das Modul darstellt.
         # IconUri = ''
 
         # 'ReleaseNotes' des Moduls
-        # ReleaseNotes = ''
+        ReleaseNotes = 'https://github.com/jschpp/get-lapscredential/blob/main/CHANGELOG.md'
 
     } # Ende der PSData-Hashtabelle
 
