@@ -19,7 +19,7 @@ function Get-LAPSCredential {
             if ($AdmPwdPassword) {
                 $Password = $AdmPwdPassword | ConvertTo-SecureString -AsPlainText -Force -ErrorAction Stop
             } else {
-                Write-Error "Couldn't get Passwort for '$Computer'!" -ErrorAction Stop
+                Write-Error "Couldn't get Password for '$Computer'!" -ErrorAction Stop
             }
             $UserName = "$Computer\Administrator"
 
