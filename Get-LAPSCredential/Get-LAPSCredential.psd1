@@ -12,7 +12,7 @@
 RootModule = 'Get-LAPSCredential.psm1'
 
 # Die Versionsnummer dieses Moduls
-ModuleVersion = '1.0.1'
+ModuleVersion = '1.1.0'
 
 # Unterstützte PSEditions
 # CompatiblePSEditions = @()
