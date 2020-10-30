@@ -42,7 +42,17 @@ function Get-LAPSCredential {
     One or more computername(s) for which to create credentials
 
     .EXAMPLE
-    Get-LAPSCredential -Computername "DESKTOP-HYKJASF"
+    PS C:\> Get-LAPSCredential -Computername "DESKTOP-HYKJASF"
+
+    UserName                                          Password
+    --------                                          --------
+    DESKTOP-HYKJASF\Administrator System.Security.SecureString
+
+    .INPUTS
+    System.String. Name of the Computer for which the credential will be created.
+
+    .OUTPUTS
+    System.Management.Automation.PSCredential. Created Credential.
 
     .NOTES
     none
