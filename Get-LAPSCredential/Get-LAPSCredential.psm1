@@ -8,7 +8,12 @@ function Get-LAPSCredential {
     param (
         [Parameter(Mandatory = $true, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true)]
         [string[]]
-        $Computername
+        $Computername,
+
+        [Parameter(Mandatory = $false)]
+        [string]
+        [Alias("AccountName")]
+        $AdministratorAccountName = "Administrator"
     )
 
     begin { }
@@ -21,7 +26,7 @@ function Get-LAPSCredential {
             } else {
                 Write-Error "Couldn't get Password for '$Computer'!" -ErrorAction Stop
             }
-            $UserName = "$Computer\Administrator"
+            $UserName = "$Computer\$AdministratorAccountName"
 
             [PSCredential]::new($Username, $Password)
         }
@@ -41,12 +46,23 @@ function Get-LAPSCredential {
     .PARAMETER Computername
     One or more computername(s) for which to create credentials
 
+    .PARAMETER AdministratorAccountName
+    Name of the local Administrator Account which will be used in the Credential.
+    "Administrator" is the default
+
     .EXAMPLE
     PS C:\> Get-LAPSCredential -Computername "DESKTOP-HYKJASF"
 
     UserName                                          Password
     --------                                          --------
     DESKTOP-HYKJASF\Administrator System.Security.SecureString
+
+    .EXAMPLE
+    PS C:\> Get-LAPSCredential -Computername "DESKTOP-HYKJASF" -AdministratorAccountName "Admin"
+
+    UserName                                  Password
+    --------                                  --------
+    DESKTOP-HYKJASF\Admin System.Security.SecureString
 
     .INPUTS
     System.String. Name of the Computer for which the credential will be created.
