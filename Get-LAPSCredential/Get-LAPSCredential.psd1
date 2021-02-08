@@ -1,4 +1,4 @@
-#
+﻿#
 # Modulmanifest für das Modul "Get-LAPSCredential"
 #
 # Generiert von: Johannes Schöpp
@@ -12,7 +12,7 @@
 RootModule = 'Get-LAPSCredential.psm1'
 
 # Die Versionsnummer dieses Moduls
-ModuleVersion = '1.1.0'
+ModuleVersion = '1.2.0'
 
 # Unterstützte PSEditions
 # CompatiblePSEditions = @()
