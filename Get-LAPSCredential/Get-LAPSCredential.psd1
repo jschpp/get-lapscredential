@@ -1,4 +1,4 @@
-﻿#
+#
 # Modulmanifest für das Modul "Get-LAPSCredential"
 #
 # Generiert von: Johannes Schöpp
@@ -55,7 +55,7 @@ Creates a pscredential which can be used in a PSSession.
 # ProcessorArchitecture = ''
 
 # Die Module, die vor dem Importieren dieses Moduls in die globale Umgebung geladen werden müssen
-RequiredModules = @("AdmPwd.PS")
+# RequiredModules = @()
 
 # Die Assemblys, die vor dem Importieren dieses Moduls geladen werden müssen
 # RequiredAssemblies = @()

@@ -1,3 +1,13 @@
+try {
+    if ($PSVersionTable.PSVersion.Major -gt 5) {
+        Import-Module "$env:windir\system32\WindowsPowerShell\v1.0\Modules\AdmPwd.PS" -SkipEditionCheck -ErrorAction Stop
+    } else {
+        Import-Module "$env:windir\system32\WindowsPowerShell\v1.0\Modules\AdmPwd.PS" -ErrorAction Stop
+    }
+} catch {
+    Write-Error -ErrorAction Stop -Message "Could not find AdmPwd.PS in system32. Make sure it is installed"
+}
+
 function Get-LAPSCredential {
     [CmdletBinding(ConfirmImpact = "Low")]
     [OutputType([pscredential])]
