@@ -1,3 +1,7 @@
+# Version 1.2.1
+
+* Added deprecation notice
+
 # Version 1.2.0
 
 * Removed AdmPwd.PS dependency from manifest and added a manual loading from system32 to the root module

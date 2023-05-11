@@ -12,7 +12,7 @@
 RootModule = 'Get-LAPSCredential.psm1'
 
 # Die Versionsnummer dieses Moduls
-ModuleVersion = '1.2.0'
+ModuleVersion = '1.2.1'
 
 # Unterstützte PSEditions
 # CompatiblePSEditions = @()
@@ -31,6 +31,11 @@ Copyright = '(c) 2020 Johannes Schöpp. Alle Rechte vorbehalten.'
 
 # Beschreibung der von diesem Modul bereitgestellten Funktionen
 Description = @"
+DEPRECATED
+This module will be deprecated with the arival of the new [Windows Laps][laps].
+
+The new Get-LapsADPassword cmdlet will yield a [PSCredential] so there is no need to use this wrapper anymore.
+
 Wrapper around Get-AdmPwdPassword.
 
 Creates a pscredential which can be used in a PSSession.
